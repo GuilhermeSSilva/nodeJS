@@ -6,12 +6,8 @@ export async function up(knex: Knex) {
     table.string('nome').notNullable();
     table.string('sexo').notNullable();
     table.string('data_de_nascimento').notNullable();
-    table.integer('idade').notNullable();
-
-    table.integer('cidade_id')
-      .notNullable()
-      .references('id')
-      .inTable('cidade');
+    table.string('idade').notNullable();
+    table.string('cidade').notNullable();
   })
 }
 

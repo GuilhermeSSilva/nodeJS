@@ -5,22 +5,51 @@ const routes = express.Router();
 
 routes.post('/cidade', async (req, res) => {
   const {
-    id,
-    nome
+    nome,
+    estado
   } = req.body;
-  const fetch = require('node-fetch');
-  const estado = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${nome}`)
-    .then((res: any) => res.json())
-    .then((json: any) => json.UF.nome);
 
-  console.log(estado);
-  // await db('cidade').insert({
-  //   id,
-  //   nome,
-  //   estado
-  // });
+  const insereCidade = await db('cidade').insert({
+    nome,
+    estado
+  })
+    .then(() => console.log("cidade incluída com sucesso")
+    )
+    .catch(() => console.log("A cidade não pode ser inserida"));
 
   res.send();
+});
+
+routes.post('/usuario', async (req, res) => {
+
+  const {
+    nome,
+    sexo,
+    data_de_nascimento,
+    idade,
+    cidade
+  } = req.body;
+
+  const insereUsuario = await db('usuario').insert({
+    nome,
+    sexo,
+    data_de_nascimento,
+    idade,
+    cidade
+  })
+    .then(() => console.log("Usuário inserido com sucesso!"))
+    .catch(() => console.log("Não foi possível inserir o usuário"));
+
+  res.send();
+});
+
+routes.get('/cidade', async (req, res) => {
+
+  const nome = req.query.nome as string;
+
+  const buscaCidade = await db('cidade').select('*').where('cidade.nome', '=', nome);
+  console.log(buscaCidade);
+  res.json(buscaCidade);
 });
 
 export default routes;

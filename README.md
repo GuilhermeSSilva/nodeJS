@@ -13,14 +13,14 @@
 
  <strong>Cadastrar Cidade:</strong> 
 
-  Para a cidade ser cadastrada com êxito deve ser passados o nome da cidade e o estado na forma de um objeto json:
-  {	
-	"nome": "nome da cidade",
-	"estado": "nome do estado da cidade"
-  }
+ <p> Para a cidade ser cadastrada com êxito deve ser passados o nome da cidade e o estado na forma de um objeto json: </p>
+ <p> {	<br>
+	"nome": "nome da cidade", <br>
+	"estado": "nome do estado da cidade" <br>
+  } </p>
 
 
- Cadastrar Cliente: 
+<strong> Cadastrar Cliente: </strong> 
 
  <p> Para o cliente ser cadastrado com êxito deve ser passados nome, sexo, data de nascimento, idade e cidade na forma de um objeto json: </p> <br>
 

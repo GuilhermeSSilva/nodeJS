@@ -37,8 +37,8 @@ routes.post('/usuario', async (req, res) => {
     idade,
     cidade
   })
-    .then(() => console.log("Usuário inserido com sucesso!"))
-    .catch(() => console.log("Não foi possível inserir o usuário"));
+    .then(() => res.status(200).send('Usuário inserido com sucesso!'))
+    .catch(() => res.status(400).send('Não foi possível inserir o usuário'));
 
   res.send();
 });
@@ -81,7 +81,13 @@ routes.delete('/usuario', async (req, res) => {
   const idUsuario = req.query.id;
   let deletaUsuario;
   if (idUsuario) {
-    deletaUsuario = await db('usuario').delete('*').where('usuario.id', '=', idUsuario);
+    deletaUsuario = await db('usuario').delete('*').where('usuario.id', '=', idUsuario)
+      .then(response => {
+        res.send('Usuário excluido com sucesso!');
+      })
+      .catch(response => {
+        res.status(200).send('Não foi possível exlcuir o usuário');
+      });
   } else {
     deletaUsuario = res.status(400).send('Tente preencher o campo id para deletar o usuário');
   }

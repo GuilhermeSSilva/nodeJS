@@ -13,11 +13,8 @@ routes.post('/cidade', async (req, res) => {
     nome,
     estado
   })
-    .then(() => console.log("cidade incluída com sucesso")
-    )
-    .catch(() => console.log("A cidade não pode ser inserida"));
-
-  res.send();
+    .then(() => res.status(200).send('cidade incluída com sucesso'))
+    .catch(() => res.status(400).send('A cidade não pode ser inserida'));
 });
 
 routes.post('/usuario', async (req, res) => {

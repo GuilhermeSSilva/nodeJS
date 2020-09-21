@@ -57,7 +57,6 @@ routes.get('/cidade', async (req, res) => {
   }
 
 
-  console.log(buscaCidade);
   res.json(buscaCidade);
 });
 
@@ -92,6 +91,18 @@ routes.delete('/usuario', async (req, res) => {
     deletaUsuario = res.status(400).send('Tente preencher o campo id para deletar o usuário');
   }
   res.send(deletaUsuario);
+});
+
+routes.patch('/usuario', async (req, res) => {
+  const idUsuario = req.query.id;
+  const nomeUsario = req.query.nome;
+  if (idUsuario && nomeUsario) {
+    alteraNomeUsuario = await db('usuario').update('nome', `${nomeUsario}`).where('usuario.id', '=', idUsuario)
+      .then(() => res.status(200).send('Nome editado com sucesso!'))
+      .catch(() => res.status(400).send("Não foi possível editar o nome do usuário"));
+  } else {
+    res.status(400).send('Preencha o id e nome do usuário corretamente');
+  }
 });
 
 export default routes;

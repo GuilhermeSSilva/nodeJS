@@ -1,12 +1,17 @@
-Aplicação desenvolvida com typescript, express e knex.
-Usados como gerenciador de pacotes o yarn.
-Essa aplicação foi desenvolvida totalmente usando node.js e suas ferramentas e bibliotecas, não foi utilizado HTML nem CSS para visualização das listagens, foi utilizado para testar a aplicação o programa Insomnia.
-A aplicação roda na porta 3333
+<h2><ul><li>Aplicação desenvolvida com typescript, express e knex.</li> <br>
+	
+<li>Usados como gerenciador de pacotes o yarn.</li> <br>
+
+<li>Essa aplicação foi desenvolvida totalmente usando node.js suas ferramentas e bibliotecas, não foi utilizado HTML nem CSS para visualização das listagens. </li> <br>
+
+<li>Foi utilizado para testar a aplicação o programa Insomnia.</li> <br>
+
+<li>A aplicação roda na porta 3333.</li></ul></h2>
 
 
-// Rotas
+<h3>// Rotas</h3>
 
- Cadastrar Cidade: 
+ <strong>Cadastrar Cidade:</strong> 
 
   Para a cidade ser cadastrada com êxito deve ser passados o nome da cidade e o estado na forma de um objeto json:
   {	
@@ -17,46 +22,46 @@ A aplicação roda na porta 3333
 
  Cadastrar Cliente: 
 
-  Para o cliente ser cadastrado com êxito deve ser passados nome, sexo, data de nascimento, idade e cidade na forma de um objeto json:
+ <p> Para o cliente ser cadastrado com êxito deve ser passados nome, sexo, data de nascimento, idade e cidade na forma de um objeto json: </p> <br>
 
-  {
-	"nome": "nome do Usuário",
-	"sexo": "sexo do Usuário",
-	"data_de_nascimento": "&&/&&/&&&&",
-	"idade": "&&",
-	"cidade": "cidade do Usuário"
-  }
+  <p>{ <br>
+	"nome": "nome do Usuário", <br>
+	"sexo": "sexo do Usuário", <br>
+	"data_de_nascimento": "&&/&&/&&&&", <br>
+	"idade": "&&", <br>
+	"cidade": "cidade do Usuário" <br>
+  } </p>
 
- Consultar Cidade pelo nome: 
+<strong> Consultar Cidade pelo nome: </strong>
 
-  Para consultar a cidade pelo nome com êxito deve ser passado nomeCidade na requisição pela url localhost:3333/cidade?nomeCidade=nome da cidade.
+ <p> Para consultar a cidade pelo nome com êxito deve ser passado nomeCidade na requisição pela url localhost:3333/cidade?nomeCidade=nome da cidade. </p>
 
 
 
- Consultar Cidade pelo Estado: 
+<strong> Consultar Cidade pelo Estado: </strong>
 
-  Para consultar a cidade pelo nome com êxito deve ser passado nomeCidade na requisição pela url localhost:3333/cidade?nomeEstado=nome do Estado.
+<p>  Para consultar a cidade pelo nome com êxito deve ser passado nomeCidade na requisição pela url localhost:3333/cidade?nomeEstado=nome do Estado. </p>
 
 
  
- Consultar Cliente pelo nome: 
+<strong> Consultar Cliente pelo nome: </strong>
 
-  Para consultar o cliente pelo nome com êxito deve ser passado nomeUsuario na requisição pela url localhost:3333/usuario?nomeUsuario=nome do usuário.
-
-
-
- Consultar Cliente pelo id:
-
-  Para consultar o cliente pelo id com êxito deve ser passado id na requisição pela url localhost:3333/usuario?id=id do usuário.
+ <p> Para consultar o cliente pelo nome com êxito deve ser passado nomeUsuario na requisição pela url localhost:3333/usuario?nomeUsuario=nome do usuário. </p>
 
 
 
- Remover Cliente pelo id: 
+<strong> Consultar Cliente pelo id: </strong>
 
-  Para remover o cliente pelo id com êxito deve ser passado id na requisição pela url localhost:3333/usuario?id=id do usuário.
+<p>  Para consultar o cliente pelo id com êxito deve ser passado id na requisição pela url localhost:3333/usuario?id=id do usuário. </p>
 
 
 
- Alterar o nome do Cliente:
+<strong> Remover Cliente pelo id: </strong> 
 
-  Para alterar o nome do cliente com êxito deve ser passado id e nome na requisição pela url localhost:3333/usuario?id=id do usuário&nome= nome do usuário.
+ <p> Para remover o cliente pelo id com êxito deve ser passado id na requisição pela url localhost:3333/usuario?id=id do usuário. </p>
+
+
+
+<strong> Alterar o nome do Cliente: </strong>
+
+<p>  Para alterar o nome do cliente com êxito deve ser passado id e nome na requisição pela url localhost:3333/usuario?id=id do usuário&nome= nome do usuário. </p>

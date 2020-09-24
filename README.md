@@ -9,7 +9,8 @@
 <li>A aplicação roda na porta 3333.</li>
 
 <li> Para a aplicação funcionar corretamente é necessário clonar ela na sua máquina, usar o comando npm install para instalar as dependências do projeto e se possível usar o 
-	yarn para iniciar o projeto com o comando yarn start ou se não for possível usar npm start </li> </ul></h2>
+	yarn para iniciar o projeto com o comando yarn start ou se não for possível usar npm start </li> 
+<li> A aplicação faz o uso do banco de dados sqlite, para instalar o banco de dados é necessário rodar o comando yarn knex:migrate</li> </ul></h2>
 
 
 <h3>// Rotas</h3>

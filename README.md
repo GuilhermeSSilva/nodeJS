@@ -1,15 +1,15 @@
 <h2><ul><li>Aplicação desenvolvida com typescript, express e knex.</li> <br>
 	
-<li>Usados como gerenciador de pacotes o yarn.</li> <br>
+<li>Usados como gerenciador de pacotes o yarn (https://classic.yarnpkg.com/pt-BR/).</li> <br>
 
 <li>Essa aplicação foi desenvolvida totalmente usando node.js suas ferramentas e bibliotecas, não foi utilizado HTML nem CSS para visualização das listagens. </li> <br>
 
 <li>Foi utilizado para testar a aplicação o programa Insomnia.</li> <br>
 
-<li>A aplicação roda na porta 3333.</li>
+<li>A aplicação roda na porta 3333.</li> <br>
 
 <li> Para a aplicação funcionar corretamente é necessário clonar ela na sua máquina, usar o comando npm install para instalar as dependências do projeto e se possível usar o 
-	yarn para iniciar o projeto com o comando yarn start ou se não for possível usar npm start </li> 
+	yarn para iniciar o projeto com o comando yarn start ou se não for possível usar npm start </li> <br>
 <li> A aplicação faz o uso do banco de dados sqlite, para instalar o banco de dados é necessário rodar o comando yarn knex:migrate</li> </ul></h2>
 
 

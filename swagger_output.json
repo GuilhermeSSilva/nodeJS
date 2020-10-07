@@ -1,0 +1,213 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Teste back end",
+    "description": "Faz o cadastro de cidades e pessoas e permiti a visualização dos mesmos."
+  },
+  "host": "localhost:3333",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {},
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/cidade": {
+      "post": {
+        "tags": [
+          {
+            "name": "Cidade ",
+            "description": "endpoints"
+          }
+        ],
+        "description": "Cadastra uma nova cidade",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cidade",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "type": "string",
+                  "example": "Pelotas"
+                },
+                "estado": {
+                  "type": "string",
+                  "example": "Rio Grande do Sul"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "cidade incluída com sucesso"
+          },
+          "400": {
+            "description": "A cidade não pode ser inserida"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          {
+            "name": "Cidade ",
+            "description": "endpoints"
+          }
+        ],
+        "description": "Consulta a cidade pelo nome da cidade.",
+        "parameters": [
+          {
+            "name": "nomeCidade",
+            "in": "query"
+          },
+          {
+            "name": "nomeEstado",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Tente passar uma informação como nomeCidade ou nomeEstado"
+          }
+        }
+      }
+    },
+    "/usuario": {
+      "post": {
+        "tags": [
+          {
+            "name": "Usuário ",
+            "description": "endpoints"
+          }
+        ],
+        "description": "Cadastra um usuário.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "usuario",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "type": "string",
+                  "example": "Guilherme"
+                },
+                "sexo": {
+                  "type": "string",
+                  "example": "Masculino"
+                },
+                "data_de_nascimento": {
+                  "type": "string",
+                  "example": "11/10/1999"
+                },
+                "idade": {
+                  "type": "string",
+                  "example": "20"
+                },
+                "cidade": {
+                  "type": "string",
+                  "example": "Pelotas"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário inserido com sucesso!"
+          },
+          "400": {
+            "description": "Não foi possível inserir o usuário"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          {
+            "name": "Usuário ",
+            "description": "endpoints"
+          }
+        ],
+        "description": "Busca usuário pelo nome ou pelo id.",
+        "parameters": [
+          {
+            "name": "nomeUsuario",
+            "in": "query"
+          },
+          {
+            "name": "id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Tente passar alguma informação como nomeUsuario ou id por exemplo"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          {
+            "name": "Usuário ",
+            "description": "endpoints"
+          }
+        ],
+        "description": "Deleta usuário através do id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário excluido com sucesso!"
+          },
+          "400": {
+            "description": "Tente preencher o campo id para deletar o usuário"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          {
+            "name": "Usuário ",
+            "description": "endpoints"
+          }
+        ],
+        "description": "Edita o usuário através do id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": "true"
+          },
+          {
+            "name": "nome",
+            "in": "query",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nome editado com sucesso!"
+          },
+          "400": {
+            "description": "Preencha o id e nome do usuário corretamente"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

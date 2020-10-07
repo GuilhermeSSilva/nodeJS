@@ -7,7 +7,8 @@
     "start": "tsnd --transpile-only --ignore-watch node_modules --respawn server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
-    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback",
+    "swagger-autogen": "node swagger.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +18,12 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
+    "@types/swagger-ui-express": "^4.1.2",
     "express": "^4.17.1",
     "knex": "^0.21.5",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.0",
+    "swagger-autogen": "^1.2.5",
+    "swagger-typescript-codegen": "^3.2.0",
+    "swagger-ui-express": "^4.1.4"
   }
 }

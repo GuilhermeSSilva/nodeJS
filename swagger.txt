@@ -1,0 +1,274 @@
+swagger: '2.0'
+
+schemes: 
+  - http
+  - https
+
+host: localhost:3000
+basePath: /testebackend-api/v1
+info:
+  version: 1.0.0
+  title: Teste back end
+  description: Faz o cadastro de cidades e pessoas e permiti a visualização dos mesmos.
+  termsOfService: http://localhost:3333//testebackend-api/v1
+  contact:
+    name: Github
+    url: https://github.com/GuilhermeSSilva/nodeJS
+    email: guilherme_rgcosta@hotmail.com
+    
+consumes:
+  - application/json
+produces:
+  - application/json
+
+tags: 
+  - name: Cidade
+  - name: Cliente
+
+paths:
+  '/cidade':
+    post:
+      tags:
+        - Cidade
+      summary: Cadastra Cidade
+      description: Cadastra uma nova cidade
+      operationId: cadastrarCidade
+      parameters:
+        - in: body
+          name: cidade_
+          schema: 
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+                example: 234
+              nome: 
+                type: string
+                example: Pelotas
+              estado:
+                type: string
+                example: Rio Grande do Sul
+      responses:
+        201:
+          description: cidade incluída com sucesso
+        400:
+          description: A cidade não pode ser inserida
+          
+          
+          
+  '/cidade/{nomeCidade}':
+    get:
+      tags:
+        - Cidade
+      summary: Consulta cidade pelo nome
+      description: Consulta a cidade pelo nome da cidade.
+      operationId: Consulta cidade pelo nome
+      parameters:
+        - in: path
+          name: nomeCidade
+          type: string
+          required: true
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Cidade' 
+        400:
+          description: Tente passar uma informação como nomeCidade ou nomeEstado
+          
+          
+  '/cidade/{nomeEstado}':
+    get:
+      tags:
+        - Cidade
+      summary: Consulta cidade pelo estado
+      description: Consulta cidade pelo nome do estado.
+      operationId: Consulta cidade pelo Estado.
+      parameters:
+        - in: path
+          name: nomeEstado
+          type: string
+          required: true
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Cidades'
+        400:
+          description: Tente passar uma informação como nomeCidade ou nomeEstado
+    
+        
+        
+        
+  '/usuario':
+    post:
+      tags:
+        - Cliente
+      summary: Cadastra clientes 
+      description: Cadastra um cliente.
+      operationId: cadastraCliente
+      parameters:
+        - in: body
+          name: usuario
+          schema: 
+            type: object
+            properties:
+              nome:
+                type: string
+                example: Guilherme
+              sexo: 
+                type: string
+                example: Masculino
+              data de nascimento:
+                type: string
+                example: 11/10/1999
+              idade:
+                type: string
+                example: 20
+              cidade: 
+                type: string
+                example: Pelotas
+          required: true
+      responses:
+        200:
+          description: Usuário inserido com sucesso!
+        400:
+          description: Não foi possível inserir o usuário
+          
+          
+  '/usuario/{nomeUsuario}':
+    get:
+      tags:
+        - Cliente
+      summary: Busca usuário pelo nome. 
+      description: Busca usuário pelo nome.
+      operationId: buscaUsuario
+      parameters:
+        - in: path
+          name: nomeUsuario
+          type: string
+          required: true
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Usuario'
+        400:
+          description: Tente passar alguma informação como nomeUsuario ou id por exemplo
+  
+  
+  '/usuario/{id}':
+    get:
+      tags:
+        - Cliente
+      summary: Busca usuário pelo id. 
+      description: Busca usuário pelo id.
+      operationId: buscaUsuarioId
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+      responses:
+        200:
+          description: Ok
+          schema:
+            $ref: '#/definitions/Usuario'
+        400:
+          description: Tente passar alguma informação como nomeUsuario ou id por exemplo
+          
+    delete:
+      tags:
+        - Cliente
+      summary: Deleta usuário
+      description: Deleta usuário através do id
+      operationId: deletaUsuario
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+      responses:
+        200:
+          description: Usuário excluido com sucesso!
+        400:
+          description: Tente preencher o campo id para deletar o usuário
+        500:
+          description: Não foi possível excluir o usuário
+        
+    patch:
+      tags:
+        - Cliente
+      summary: Edita o usuário
+      description: Edita o usuário através do id
+      operationId: editaUsuario
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+      responses:
+        200:
+          description: Nome editado com sucesso!
+        400:
+          description: Preencha o id e nome do usuário corretamente
+        500:
+          description: Não foi possível editar o nome do usuário
+        
+definitions:
+
+  Usuario:
+    type: object
+    properties:
+      id: 
+        type: integer
+        format: int64
+        example: 456
+      nome:
+        type: string
+        example: Guilherme Costa da Silva
+      sexo:
+        type: string
+        example: Masculino
+      data_de_nascimento:
+        type: string
+        example: 11/10/1999
+      idade:
+        type: string
+        example: 20
+      cidade:
+        type: string
+        example: Pelotas
+        
+        
+  Cidade:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 589
+      nome:
+        type: string
+        example: Capão do Leão
+      estado: 
+        type: string
+        example: Rio Grande do Sul
+        
+  Cidades:
+    type: array
+    items:
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 589
+        nome:
+          type: string
+          example: Capão do Leão
+        estado: 
+          type: string
+          example: Rio Grande do Sul
+        
+        

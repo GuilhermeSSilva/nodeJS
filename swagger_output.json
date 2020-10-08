@@ -38,11 +38,13 @@
               "properties": {
                 "nome": {
                   "type": "string",
-                  "example": "Pelotas"
+                  "example": "Pelotas",
+                  "required": "true"
                 },
                 "estado": {
                   "type": "string",
-                  "example": "Rio Grande do Sul"
+                  "example": "Rio Grande do Sul",
+                  "required": "true"
                 }
               }
             }
@@ -100,23 +102,28 @@
               "properties": {
                 "nome": {
                   "type": "string",
-                  "example": "Guilherme"
+                  "example": "Guilherme",
+                  "required": "true"
                 },
                 "sexo": {
                   "type": "string",
-                  "example": "Masculino"
+                  "example": "Masculino",
+                  "required": "true"
                 },
                 "data_de_nascimento": {
                   "type": "string",
-                  "example": "11/10/1999"
+                  "example": "11/10/1999",
+                  "required": "true"
                 },
                 "idade": {
                   "type": "string",
-                  "example": "20"
+                  "example": "20",
+                  "required": "true"
                 },
                 "cidade": {
                   "type": "string",
-                  "example": "Pelotas"
+                  "example": "Pelotas",
+                  "required": "true"
                 }
               }
             }
@@ -166,7 +173,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query"
+            "in": "query",
+            "required": "true"
           }
         ],
         "responses": {

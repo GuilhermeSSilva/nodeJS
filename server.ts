@@ -11,4 +11,6 @@ app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(routes);
 
-app.listen(3333);
+app.listen(3333, () => {
+  console.log("O servidor está rodando");
+});

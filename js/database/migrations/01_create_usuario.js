@@ -1,4 +1,4 @@
-import Knex from 'knex';
+const Knex = require('knex');
 
 export async function up(knex) {
   return knex.schema.createTable('usuario', table => {

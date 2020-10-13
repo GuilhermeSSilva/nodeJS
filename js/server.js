@@ -1,9 +1,7 @@
-import express from 'express';
-import routes from './routes.js';
-import swaggerUi from 'swagger-ui-express';
-const swaggerFile = './swagger_output.json';
-
-console.log(express);
+const express = require('express');
+const routes = require('./routes.js');
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger_output.json');
 
 const app = express();
 

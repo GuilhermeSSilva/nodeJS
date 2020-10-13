@@ -1,5 +1,5 @@
-import express from 'express';
-import db from './database/connection.js';
+const express = require('express');
+const db = require('./database/connection.js');
 
 const routes = express.Router();
 
@@ -102,4 +102,4 @@ routes.patch('/usuario', async (req, res) => {
   }
 });
 
-export default routes;
+module.exports = routes;

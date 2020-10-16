@@ -14,10 +14,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "knex": "^0.21.5",
+    "knex": "^0.21.6",
     "node": "^14.13.0",
     "sqlite3": "^5.0.0",
     "swagger-autogen": "^1.2.5",
     "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5"
   }
 }

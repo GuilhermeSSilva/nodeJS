@@ -1,6 +1,6 @@
 const Knex = require('knex');
 
-export async function up(knex) {
+exports.up = async function up(knex) {
   return knex.schema.createTable('cidade', table => {
     table.increments('id').primary();
     table.string('nome').notNullable();
@@ -8,6 +8,6 @@ export async function up(knex) {
   })
 }
 
-export async function down(knex) {
+exports.down = async function down(knex) {
   return knex.schema.dropTable('cidade');
 }
